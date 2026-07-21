@@ -4,6 +4,16 @@
 
 在线体验：[xiaojinku-2003.pages.dev](https://xiaojinku-2003.pages.dev/)
 
+## 效果图
+
+### 电脑端首页
+
+![电脑端首页](docs/screenshots/desktop-home.png)
+
+### 手机端预算
+
+<img src="docs/screenshots/mobile-budget.png" alt="手机端预算页面" width="390">
+
 ## 功能
 
 - 记录收入和花销，自动填写日期与时间
