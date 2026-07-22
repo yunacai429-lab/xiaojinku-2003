@@ -207,7 +207,51 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
 
 ## 本次迭代记录
 
-本节将在本任务最终提交和线上验收后更新，记录实际 commit、测试和部署结果。
+完成日期：2026-07-22
+
+版本：`v1.4.3`（本次只建立交接机制和核验现状，没有修改应用版本或业务代码）
+
+提交与同步基线：
+
+- 本次交接文档首个本地提交：`c630a9d`（完整 SHA 可用 `git show c630a9d --no-patch` 查看）
+- 文档建立前本地应用提交：`075d5b94edbd09ea977a19384c579440c4bf9cd3`
+- 文档建立前 GitHub 应用提交：`34ca592c99c0b19a39d807d57a6e58fc46d3c5b1`
+- 已用非破坏性 merge 合并本地与 GitHub 分叉历史；合并前 `git diff origin/main` 为空，没有覆盖用户文件。
+- 本节所在的最终元数据提交无法在自身内容中可靠自引用；接手时以 `git rev-parse HEAD` 和 `git rev-parse origin/main` 为准。
+
+本次完成：
+
+- 新建 `AGENTS.md`，写入长期开发、测试、安全、GitHub 和 Cloudflare 发布规则。
+- 新建并填充 `PROJECT_HANDOFF.md`，记录真实架构、目录、配置、功能、限制、流程和接手说明。
+- 检查工作区、Git 状态、提交图、GitHub `main`、Supabase schema、静态部署方式和生产资源。
+- 确认没有 `package.json`、构建器、自动化测试、`wrangler` 或仓库内 Cloudflare 配置。
+- 敏感信息扫描通过：交接文档未包含 Supabase key 值、密码、Token、私钥或真实账本数据。
+
+测试与构建结果：
+
+- JavaScript：`cua_node --check src/main.js` 通过。
+- Git：`git diff --check` 通过，无冲突标记。
+- 静态服务：`http://localhost:4173/` 成功返回 `v1.4.3` HTML。
+- 构建：项目无构建步骤；`outputs/xiaojinku-cloudflare.zip` 已校验，包含 `index.html`、`src/main.js`、`src/style.css`。
+- 本地桌面演示：记账金额/类别/月付/备注、保存后留在记账页、预算编辑/保存/新增、单条还款、明细、统计、账户和设置均通过。
+- 本地移动 390x844：记账、预算和单条还款通过；页面 `scrollWidth` 等于 `clientWidth` 390，无横向溢出；日期和时间处于同一行。
+- 生产演示：资源加载 `v1.4.3-20260722e`；桌面记账输入、类别/月付切换、预算输入和单条还款选择通过。
+- 所有浏览器功能测试都使用演示模式，没有登录或修改真实账号数据。
+
+线上核验结果：
+
+- 生产网址：`https://xiaojinku-2003.pages.dev/`
+- 生产 HTML 资源参数：`v1.4.3-20260722e`
+- 已核实 Cloudflare 生产部署详情状态为 `success`，部署 ID 为 `d6b36f1b-187f-4522-908d-8fee7d8e9ad1`。
+- 本次应用代码与已发布生产代码一致；交接 Markdown 不包含在 Cloudflare 部署包中，因此文档更新不要求改变网站资源版本。
+
+仍存在的问题与建议：
+
+- 当前没有自动化测试，下一步最优先建立可重复的浏览器回归测试。
+- 修复 `shell()` 中固定的桌面顶部日期。
+- 评估取消 localStorage 明文记住密码。
+- 在测试覆盖到位后再考虑拆分 `src/main.js`。
+- 建议建立 GitHub 到 Cloudflare 的自动部署，减少网页上传造成的本地/远端 commit 分叉。
 
 ## 给下一个任务
 
