@@ -214,6 +214,8 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
 提交与同步基线：
 
 - 本次交接文档首个本地提交：`c630a9d`（完整 SHA 可用 `git show c630a9d --no-patch` 查看）
+- 本次交接验收结果本地提交：`ecd50f5aeb604c55c10289842a198133cdcfaf44`
+- GitHub 网页上传交接文档提交：`44f863abdc7e7d0470d66539544100fc72fc14fd`
 - 文档建立前本地应用提交：`075d5b94edbd09ea977a19384c579440c4bf9cd3`
 - 文档建立前 GitHub 应用提交：`34ca592c99c0b19a39d807d57a6e58fc46d3c5b1`
 - 已用非破坏性 merge 合并本地与 GitHub 分叉历史；合并前 `git diff origin/main` 为空，没有覆盖用户文件。
