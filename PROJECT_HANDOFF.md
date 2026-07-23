@@ -64,6 +64,8 @@
 ├── src/
 │   ├── main.js               状态、认证、同步、业务逻辑和页面渲染
 │   └── style.css             两套皮肤及桌面/移动样式
+├── vendor/
+│   └── xlsx.full.min.js      微信账单 Excel 本地解析组件
 ├── supabase-schema.sql       数据表、权限和 RLS 初始化脚本
 ├── docs/screenshots/         README 效果图
 ├── 小金库_v1.4.0基准.md      历史版本基准
@@ -107,7 +109,7 @@ python3 -m http.server 4173
 # 浏览器访问 http://localhost:4173/
 
 # 生成 Cloudflare Direct Upload 包
-zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
+zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 ```
 
 “构建”在本项目中仅指确认静态入口和资源可读取、再生成 zip；没有 `npm run build`。
@@ -128,7 +130,7 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
 
 1. 确认 `index.html` 缓存参数已升级。
 2. 执行 `zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src`。
-3. 检查 zip 根目录是 `index.html` 和 `src/`。
+3. 检查 zip 根目录是 `index.html`、`src/` 和 `vendor/`。
 4. 打开 Cloudflare Pages 项目 `xiaojinku-2003`。
 5. 选择 `Create deployment`，环境选择 `Production`。
 6. 上传 `outputs/xiaojinku-cloudflare.zip`，确认文件列表包含 `index.html`、`src/main.js`、`src/style.css`。
@@ -156,6 +158,7 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
 - 桌面侧栏/工具栏和移动底部导航
 - 页面顶部刷新；移动端刷新会同步后完整 reload 并恢复页面
 - 免登录演示模式，不读写云端
+- 桌面端导入微信支付官方 `.xlsx` 账单，原始文件只在浏览器本地解析；导入记录不自动修改微信账户余额
 
 ## 已知问题与风险
 
@@ -214,7 +217,7 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
 - 本地发布前 `HEAD`：`a95684dddbcc2d0a5d401fe6c1b667750d0cca85`。
 - 发布前 GitHub `origin/main`：`80f9ab4af57a56cee1684250650e36ff693a3638`。
 - 发布前生产版本：`v1.4.3`，资源参数为 `1.4.3-20260722e`。
-- 本地保留了既有 12 个提交的领先历史；本次仅修改 `README.md`、`VERSION`、`index.html`、`src/main.js`、`src/style.css` 和本文件。
+- 本地保留了既有 12 个提交的领先历史；发布过程中检测到并保留了工作区并发新增的微信账单导入修改和 `vendor/xlsx.full.min.js`，没有回退或覆盖。
 
 本次完成：
 
@@ -226,15 +229,17 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
 - 预算概览改为总预算、已用、剩余三色大字号金额、百分比和进度线；月份继续由系统当前日期自动计算。
 - 修复手机明细筛选控件重叠；390px 和 440px 视口均无横向溢出。
 - 皮肤 2 首页剩余预算图标改为 `📊`。
+- 保留并纳入桌面端微信支付 `.xlsx` 账单导入：支持本地解析、预览勾选、分类建议、重复/无效记录跳过；导入记录不自动修改微信账户余额。
 - 版本升级到 `v1.5.0`，缓存参数升级为 `1.5.0-20260723a`。
 
 本地测试结果：
 
 - `cua_node --check src/main.js`、`git diff --check` 和冲突标记检查通过。
-- Cloudflare 压缩包已生成并核对，根目录包含 `index.html`、`src/main.js`、`src/style.css`。
+- Cloudflare 压缩包已生成并核对，根目录包含 `index.html`、`src/main.js`、`src/style.css` 和 `vendor/xlsx.full.min.js`。
 - 桌面 1280x900 演示模式：记账输入保持、单次保存并清空、明细筛选、统计折线图及三分类上限、预算编辑/新增分类、账户编辑/新增/删除、单条还款及账户选择、个人资料入口和两套皮肤均通过。
 - 手机 390x844 演示模式：六项导航、记账日期与时间同排、明细筛选无重叠、统计图及三分类、设置预算/账户入口、预算编辑、单条还款均通过；所有检查页面 `scrollWidth === clientWidth`。
 - 补充检查过 440x956 视口，明细筛选、设置和预算布局正常。
+- 桌面微信账单导入入口和文件选择页可打开，`.xlsx` 控件与本地解析提示正常；未使用真实账单文件进行导入测试。
 - 浏览器控制台无警告或错误；全部交互测试均使用演示模式，没有登录或修改真实账本。
 
 发布状态：
