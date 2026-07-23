@@ -260,7 +260,7 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 
 - 项目仍没有自动化回归测试和自动部署，浏览器验收与 Cloudflare Direct Upload 仍需人工执行。
 - `src/main.js` 与 `src/style.css` 仍为集中式单文件，后续修改共享渲染和事件时需要继续双端回归。
-- 生产发布完成后工作区并发新增了“导入预览中直接新增分类”的 `src/main.js` 修改；该修改已保留在本地工作树，但未纳入本次 GitHub/Cloudflare 发布，也未完成交互验收。下一次接手必须先检查 `git diff -- src/main.js`，测试后另行决定版本和发布。
+- 生产发布完成后工作区并发新增了“导入预览中直接新增分类”的修改，涉及 `README.md`、`index.html`、`src/main.js` 和 `src/style.css`，并把本地缓存参数推进到 `1.5.0-20260723c`。这些修改已保留在本地工作树，但未纳入本次 GitHub/Cloudflare 的 `20260723b` 发布，也未完成完整交互验收。下一次接手必须先检查这四个文件的 `git diff`，测试后另行决定版本和发布。
 
 ### v1.4.3（2026-07-22）
 
