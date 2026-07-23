@@ -65,7 +65,8 @@
 │   ├── main.js               状态、认证、同步、业务逻辑和页面渲染
 │   └── style.css             两套皮肤及桌面/移动样式
 ├── vendor/
-│   └── xlsx.full.min.js      微信账单 Excel 本地解析组件
+│   ├── xlsx.full.min.js      微信账单 Excel 本地解析组件
+│   └── LICENSE.sheetjs.txt   SheetJS 第三方许可证
 ├── supabase-schema.sql       数据表、权限和 RLS 初始化脚本
 ├── docs/screenshots/         README 效果图
 ├── 小金库_v1.4.0基准.md      历史版本基准
@@ -230,12 +231,12 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 - 修复手机明细筛选控件重叠；390px 和 440px 视口均无横向溢出。
 - 皮肤 2 首页剩余预算图标改为 `📊`。
 - 保留并纳入桌面端微信支付 `.xlsx` 账单导入：支持本地解析、预览勾选、分类建议、重复/无效记录跳过；导入记录不自动修改微信账户余额。
-- 版本升级到 `v1.5.0`，缓存参数升级为 `1.5.0-20260723a`。
+- 版本升级到 `v1.5.0`，缓存参数升级为 `1.5.0-20260723b`。
 
 本地测试结果：
 
 - `cua_node --check src/main.js`、`git diff --check` 和冲突标记检查通过。
-- Cloudflare 压缩包已生成并核对，根目录包含 `index.html`、`src/main.js`、`src/style.css` 和 `vendor/xlsx.full.min.js`。
+- Cloudflare 压缩包已生成并核对，根目录包含 `index.html`、`src/main.js`、`src/style.css`、`vendor/xlsx.full.min.js` 和第三方许可证。
 - 桌面 1280x900 演示模式：记账输入保持、单次保存并清空、明细筛选、统计折线图及三分类上限、预算编辑/新增分类、账户编辑/新增/删除、单条还款及账户选择、个人资料入口和两套皮肤均通过。
 - 手机 390x844 演示模式：六项导航、记账日期与时间同排、明细筛选无重叠、统计图及三分类、设置预算/账户入口、预算编辑、单条还款均通过；所有检查页面 `scrollWidth === clientWidth`。
 - 补充检查过 440x956 视口，明细筛选、设置和预算布局正常。
