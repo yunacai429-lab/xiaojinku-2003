@@ -55,7 +55,7 @@ rg -n '^(<<<<<<<|=======|>>>>>>>)' .
 python3 -m http.server 4173
 
 # 部署包
-zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
+zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 ```
 
 如果系统 Node 可用，也可以运行 `node --check src/main.js`。端口被占用时使用其他端口并在交接文档中注明。
@@ -87,7 +87,7 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src
 - Pages 项目名：`xiaojinku-2003`
 - 生产网址：`https://xiaojinku-2003.pages.dev/`
 - 当前没有 `wrangler` 配置或 GitHub 自动部署，使用 Direct Upload。
-- 发布前用上面的 `zip` 命令生成部署包，确认压缩包根目录包含 `index.html` 和 `src/`。
+- 发布前用上面的 `zip` 命令生成部署包，确认压缩包根目录包含 `index.html`、`src/` 和 `vendor/`。
 - 在 Cloudflare Pages 项目中选择 Production，上传压缩包并执行 Save and deploy。
 - 上传成功不等于生产生效。必须确认部署详情状态为 `success`，再访问主域名并核对 `index.html` 的版本参数。
 - 最后在生产域名的演示模式重复核心交互验收。不要只验证唯一部署子域名。
