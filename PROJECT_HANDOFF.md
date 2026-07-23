@@ -254,11 +254,12 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 
 发布状态：
 
-- 本地应用发布提交：`fcb3c6c9e7e6464605248d0f9744353ee59e8c7b`；本节最终交接提交需以接手时 `git rev-parse HEAD` 为准。
-- GitHub `main` 应用与第三方资源提交：`b5af6b7537281ae027154209b964d79c5b9506d1`；本节最终网页交接提交会产生后续 SHA，应以接手时 `git rev-parse origin/main` 为准。
+- 本轮本地应用发布提交：`c63c27c64dd55c8af2506e701c91374b08d38c50`；最终交接文档提交见本节后续记录。
+- 本轮 GitHub `main` 应用提交：`e21992e6ca020070e2640d66f908b1841775a8d2`；最终交接文档网页提交会产生后续 SHA，应以接手时 `git rev-parse origin/main` 为准。
 - 命令行 HTTPS 凭据不可用，GitHub 通过已登录网页分批上传；因此本地和远端提交历史不同，但受控发布文件内容已逐项核对一致。
-- 上一轮 Cloudflare Pages Production 部署 ID：`a2427de0-b90a-44b7-9d0f-a27f6faf389b`，状态为 `success`；本轮 `20260723c` Direct Upload 待完成后在此补录实际部署 ID。
-- 本轮发布前生产主域仍加载 `style.css?v=1.5.0-20260723b` 和 `main.js?v=1.5.0-20260723b`；发布后必须核对为 `1.5.0-20260723c` 并补录生产双端验收结果。
+- Cloudflare Pages Production 部署 ID：`4921cdd8-a4bb-4c4b-9b1b-3592f93d72b2`，详情状态为 `success`，唯一部署网址为 `https://4921cdd8.xiaojinku-2003.pages.dev`。
+- 生产主域 `https://xiaojinku-2003.pages.dev/` 已加载 `style.css?v=1.5.0-20260723c`、`main.js?v=1.5.0-20260723c` 和本地 SheetJS 资源。
+- 生产桌面 1280x900 演示：统计双轴折线及三分类、设置页 `980px` 模块宽度均通过；生产手机 440x956 演示：六项等宽导航、明细筛选无重叠、统计双轴折线及三分类均通过，全部检查页面无横向溢出，控制台无警告或错误。
 - 所有生产验收均使用免登录演示模式，没有登录或修改真实云端账本。
 
 已知问题：
