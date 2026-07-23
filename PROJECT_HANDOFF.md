@@ -248,12 +248,19 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 
 发布状态：
 
-- GitHub 与 Cloudflare 发布待本节首次提交后执行；最终 SHA、部署 ID、状态和生产验收结果将在发布后补入本节。
+- 本地应用发布提交：`fcb3c6c9e7e6464605248d0f9744353ee59e8c7b`；本节最终交接提交需以接手时 `git rev-parse HEAD` 为准。
+- GitHub `main` 应用与第三方资源提交：`b5af6b7537281ae027154209b964d79c5b9506d1`；本节最终网页交接提交会产生后续 SHA，应以接手时 `git rev-parse origin/main` 为准。
+- 命令行 HTTPS 凭据不可用，GitHub 通过已登录网页分批上传；因此本地和远端提交历史不同，但受控发布文件内容已逐项核对一致。
+- Cloudflare Pages Production 部署 ID：`a2427de0-b90a-44b7-9d0f-a27f6faf389b`，部署详情状态为 `success`，唯一部署网址为 `https://a2427de0.xiaojinku-2003.pages.dev`。
+- 生产主域 `https://xiaojinku-2003.pages.dev/` 已加载 `style.css?v=1.5.0-20260723b`、`main.js?v=1.5.0-20260723b` 和本地 SheetJS 资源。
+- 生产桌面演示：统计双轴折线、三分类、记账输入保持、微信账单导入入口通过；生产手机 390x844：六项导航、统计图、设置模块和微信导入入口通过，`scrollWidth === clientWidth`。
+- 所有生产验收均使用免登录演示模式，没有登录或修改真实云端账本。
 
 已知问题：
 
 - 项目仍没有自动化回归测试和自动部署，浏览器验收与 Cloudflare Direct Upload 仍需人工执行。
 - `src/main.js` 与 `src/style.css` 仍为集中式单文件，后续修改共享渲染和事件时需要继续双端回归。
+- 生产发布完成后工作区并发新增了“导入预览中直接新增分类”的 `src/main.js` 修改；该修改已保留在本地工作树，但未纳入本次 GitHub/Cloudflare 发布，也未完成交互验收。下一次接手必须先检查 `git diff -- src/main.js`，测试后另行决定版本和发布。
 
 ### v1.4.3（2026-07-22）
 
