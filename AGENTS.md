@@ -75,6 +75,9 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 
 - 仓库：`https://github.com/yunacai429-lab/xiaojinku-2003`
 - 默认分支：`main`
+- README 只保留最新版本和上一个版本的摘要，最新版本置顶；每版只写主要功能、重要修复和明显升级，不罗列小改动或技术细节。
+- GitHub Release 使用同样的精简说明，并确认新版本设为 Latest；历史 Release 保留，不删除。
+- 每次更新 README 版本说明或创建 GitHub Release 前，必须先把两处拟发布文字发给用户确认；未得到明确确认不得提交、推送或发布。
 - 修复升级 patch 版本，新增兼容功能升级 minor 版本，不兼容改版才升级 major 版本。
 - 发布提交至少同步修改 `VERSION`、`README.md`、`index.html` 缓存参数和 `PROJECT_HANDOFF.md`。
 - 提交前运行 `git fetch origin`、`git status --short --branch`、`git diff --check`，确认本地与远端差异。

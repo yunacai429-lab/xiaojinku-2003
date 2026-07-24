@@ -1,6 +1,6 @@
 # 小金库项目交接
 
-更新时间：2026-07-23（Asia/Shanghai）
+更新时间：2026-07-24（Asia/Shanghai）
 
 ## 接手入口
 
@@ -210,6 +210,13 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 - [ ] 文档和提交中不含密码、Token、私钥或真实账本数据。
 
 ## 本次迭代记录
+
+### v1.5.0 发布说明整理（2026-07-24）
+
+- 经用户确认，将 README 版本说明精简为 v1.5.0 与 v1.4.0 两版摘要，最新版本置顶。
+- 新建 GitHub `v1.5.0` Release，标题为“小金库 v1.5.0”，并设为 Latest；标签指向 GitHub `main` 提交 `0e6c9059c18838cd411e86cbfe194bdcf34a4ed6`。
+- 在 `AGENTS.md` 固化发布规则：只写主要功能、重要修复和明显升级；README 保留最近两个版本；发布前必须先把 README 和 Release 文案交用户确认。
+- 本轮只修改公开说明与发布元数据，不修改应用代码、版本号或 Cloudflare 生产部署。
 
 ### v1.5.0（2026-07-23）
 
