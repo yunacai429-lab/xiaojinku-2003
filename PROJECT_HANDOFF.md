@@ -270,6 +270,14 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 - 生产桌面 1280x900 演示：统计双轴折线及三分类、设置页 `980px` 模块宽度均通过；生产手机 440x956 演示：六项等宽导航、明细筛选无重叠、统计双轴折线及三分类均通过，全部检查页面无横向溢出，控制台无警告或错误。
 - 所有生产验收均使用免登录演示模式，没有登录或修改真实云端账本。
 
+### v1.5.0 滚动修复上线（2026-07-24）
+
+- 修复微信账单导入预览中取消勾选或全选时调用整页 `render()` 导致长列表跳回顶部的问题；改为局部更新行状态、已选统计、确认按钮和全选状态。
+- 资源缓存参数升级为 `1.5.0-20260723d`。
+- 本地修复提交：`f2eca97845c845a025bb13f5a1c9907a8eabb0c1`；使用正常 merge 统一既有本地与 GitHub 历史后，GitHub `main` 与本地 `main` 实际 SHA 均为 `0e6c9059c18838cd411e86cbfe194bdcf34a4ed6`。
+- Cloudflare Pages Production 部署 ID：`f3d0af0b-9cd6-4dcd-8a88-9dfa9c10f2f6`，控制台部署完成提示为 `Success!`，唯一部署网址为 `https://f3d0af0b.xiaojinku-2003.pages.dev`。
+- 生产主域已核对加载 `style.css?v=1.5.0-20260723d`、`main.js?v=1.5.0-20260723d` 和本地 SheetJS 资源；免登录演示可正常进入，浏览器控制台无错误或警告。未登录真实账号，也未修改真实账本数据。
+
 已知问题：
 
 - 项目仍没有自动化回归测试和自动部署，浏览器验收与 Cloudflare Direct Upload 仍需人工执行。
