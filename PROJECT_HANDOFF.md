@@ -211,7 +211,7 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 
 ## 本次迭代记录
 
-### v1.6.0（发布中，2026-07-24）
+### v1.6.0（2026-07-24）
 
 - 设置页新增每月 1 至 31 日的记账周期开始日，旧账本默认每月 1 日开始；不存在的日期自动按当月最后一天计算。
 - 首页收入、支出与预算，明细默认筛选及统计页“按周期”统一使用自定义周期；演示账本默认展示每月 15 日至次月 14 日的工资周期。
@@ -221,6 +221,10 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 - 新增小金库 Excel 账单导出：桌面工具栏和手机设置页均可进入，支持全部记录、当前记账周期和自定义日期范围；文件包含账单汇总与收支明细，不导出账户余额、头像或登录信息。
 - 导入账单、类别预算、账户管理和个人资料等二级页面左上角新增返回键，并使用页面历史返回实际进入前的页面。
 - 用户已确认 README 与 GitHub Release 文案；版本号升级为 `v1.6.0`，资源缓存参数升级为 `1.6.0-20260724a`。
+- 本地与 GitHub `main` 应用发布提交为 `1d3b8655e3e27c5fcad6644b1b4023caa620cae9`；GitHub Release `v1.6.0` 已创建并设为 Latest，地址为 `https://github.com/yunacai429-lab/xiaojinku-2003/releases/tag/v1.6.0`。
+- Cloudflare Pages Production 部署 ID：`066aed68-7737-4a66-b825-8d39d864b7f8`，详情状态为 `success`，唯一部署网址为 `https://066aed68.xiaojinku-2003.pages.dev`。
+- 生产主域 `https://xiaojinku-2003.pages.dev/` 已核对加载 `style.css?v=1.6.0-20260724a`、`main.js?v=1.6.0-20260724a` 和本地 SheetJS 资源。
+- 生产演示模式复核通过：自定义周期开始日为 15 日，微信/支付宝双导入入口、三种导出范围和二级页面返回均正常；浏览器控制台无错误或警告，未登录或修改真实账号数据。
 
 ### v1.5.0 发布说明整理（2026-07-24）
 
