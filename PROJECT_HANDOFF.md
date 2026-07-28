@@ -15,7 +15,7 @@
 
 小金库是一个供个人使用的复古风响应式记账网页，主要记录收入、日常花销、分类预算、余额账户、月付负债、还款和存款。当前阶段为可公开访问和跨设备同步的稳定迭代版，重点是保证 Mac 与 iPhone 上的核心操作可靠。
 
-当前版本：`v1.6.1`
+当前版本：`v1.7.0`
 
 当前版本支持自定义记账周期、支付宝与微信账单导入、Excel 账单导出，并为二级页面补充返回上一级导航。
 
@@ -110,7 +110,7 @@ python3 -m http.server 4173
 # 浏览器访问 http://localhost:4173/
 
 # 生成 Cloudflare Direct Upload 包
-zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
+zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest assets src vendor
 ```
 
 “构建”在本项目中仅指确认静态入口和资源可读取、再生成 zip；没有 `npm run build`。
@@ -130,8 +130,8 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 ## Cloudflare 生产发布流程
 
 1. 确认 `index.html` 缓存参数已升级。
-2. 执行 `zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src`。
-3. 检查 zip 根目录是 `index.html`、`src/` 和 `vendor/`。
+2. 执行 `zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest assets src vendor`。
+3. 检查 zip 根目录是 `index.html`、`manifest.webmanifest`、`assets/`、`src/` 和 `vendor/`。
 4. 打开 Cloudflare Pages 项目 `xiaojinku-2003`。
 5. 选择 `Create deployment`，环境选择 `Production`。
 6. 上传 `outputs/xiaojinku-cloudflare.zip`，确认文件列表包含 `index.html`、`src/main.js`、`src/style.css`。
@@ -210,6 +210,13 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 - [ ] 文档和提交中不含密码、Token、私钥或真实账本数据。
 
 ## 本次迭代记录
+
+### v1.7.0：小金库品牌 Logo与手机主屏幕支持（2026-07-28）
+
+- 新增独立 `assets/logo.svg`：以系统蓝、金币黄和粉色小猪头像组成复古应用图标；第二稿重画为更简洁的正面造型并移除“03”字样，第三稿增加头顶投币槽和正在投入的金币，并移除图标外圈白边。
+- Logo 已用于登录页、应用顶栏、浏览器图标及 iPhone/Android 主屏幕图标；新增 Web App 清单和独立运行模式，页面标题更新为“小金库 2003 · 复古记账”。
+- 本地检查通过：JavaScript 语法和 Git 空白检查无错误；1280x900 登录页与账本页面正常；390x844 页面无横向溢出，底部 6 个导航入口完整；浏览器控制台无错误。
+- 版本号升级为 `v1.7.0`，资源缓存参数升级为 `1.7.0-20260728a`；README 与 GitHub Release 文案已由用户确认。
 
 ### v1.6.1：手机记账页类别按钮自适应（2026-07-28）
 

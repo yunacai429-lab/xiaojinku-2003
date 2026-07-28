@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">小金库</title>
+  <desc id="desc">正在投入金币的粉色小猪存钱罐</desc>
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b9cff"/>
+      <stop offset="1" stop-color="#0755cf"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd9df"/>
+      <stop offset="1" stop-color="#f39aaa"/>
+    </linearGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff38a"/>
+      <stop offset="1" stop-color="#f2a900"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="13" fill="url(#tile)"/>
+  <path d="M7 48h50v8H7z" fill="#0648ad" opacity=".55"/>
+  <g transform="rotate(-8 32 13)">
+    <circle cx="32" cy="13" r="9" fill="url(#coin)" stroke="#8b5900" stroke-width="2"/>
+    <path d="M32 7v12M28 10h7M28 16h7" fill="none" stroke="#956000" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <path d="M18 25 12 18c-1-1-3 0-3 2l1 13m36-8 6-7c1-1 3 0 3 2l-1 13" fill="#f49bad" stroke="#8e4654" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="32" cy="38" rx="23" ry="19" fill="url(#face)" stroke="#8e4654" stroke-width="2.5"/>
+  <path d="M18 28c8-6 20-7 29-1" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+  <path d="M24 26c5-2 11-2 16 0" fill="none" stroke="#7d3d4a" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M26 24.5c4-1 8-1 12 0" fill="none" stroke="#ffd9df" stroke-width="1.2" stroke-linecap="round" opacity=".75"/>
+  <circle cx="23" cy="36" r="2.5" fill="#2c3143"/>
+  <circle cx="41" cy="36" r="2.5" fill="#2c3143"/>
+  <circle cx="22" cy="35" r=".8" fill="#fff"/>
+  <circle cx="40" cy="35" r=".8" fill="#fff"/>
+  <circle cx="16" cy="43" r="3" fill="#ef7188" opacity=".5"/>
+  <circle cx="48" cy="43" r="3" fill="#ef7188" opacity=".5"/>
+  <ellipse cx="32" cy="45" rx="9" ry="6.5" fill="#ef8498" stroke="#a74e60" stroke-width="2"/>
+  <ellipse cx="28.5" cy="45" rx="1.3" ry="2" fill="#8e4654"/>
+  <ellipse cx="35.5" cy="45" rx="1.3" ry="2" fill="#8e4654"/>
+  <path d="M29 52c2 1.5 4 1.5 6 0" fill="none" stroke="#8e4654" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

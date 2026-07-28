@@ -1,0 +1,21 @@
+{
+  "name": "小金库 2003",
+  "short_name": "小金库",
+  "description": "Windows XP 风格的个人记账应用",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#75a8e8",
+  "theme_color": "#1764d4",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

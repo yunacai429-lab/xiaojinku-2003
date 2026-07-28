@@ -55,7 +55,7 @@ rg -n '^(<<<<<<<|=======|>>>>>>>)' .
 python3 -m http.server 4173
 
 # 部署包
-zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
+zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest assets src vendor
 ```
 
 如果系统 Node 可用，也可以运行 `node --check src/main.js`。端口被占用时使用其他端口并在交接文档中注明。
