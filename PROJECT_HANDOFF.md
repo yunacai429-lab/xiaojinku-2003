@@ -216,6 +216,9 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html src vendor
 - 修复手机记账页类别名称较长时文字溢出按钮的问题：类别列表由固定五列改为按内容自适应宽度并自动换行，按钮在极窄屏下也不会超出容器。
 - 本地验收通过：390x844 视口中不同长度的类别按钮宽度随内容变化，按钮文字、类别区和页面均无横向溢出；320x700 视口自动分为三行且无横向溢出；1280x900 桌面布局未受影响。
 - 版本号升级为 `v1.6.1`，资源缓存参数升级为 `1.6.1-20260728a`；README 与 GitHub Release 文案已由用户确认。
+- 应用发布提交为 `ee3f17412e69221bc349fae8007891a8ce555d32`，已推送至 GitHub `main`；GitHub Release `v1.6.1` 已创建并设为 Latest，地址为 `https://github.com/yunacai429-lab/xiaojinku-2003/releases/tag/v1.6.1`。
+- Cloudflare Pages Production 部署 ID：`19774bef-62d6-4a80-84b8-bf05b5b4f22d`，详情状态为 `success`，唯一部署网址为 `https://19774bef.xiaojinku-2003.pages.dev`。
+- 生产主域已核对加载 `style.css?v=1.6.1-20260728a` 和 `main.js?v=1.6.1-20260728a`；390x844 演示记账页类别按钮自适应、自动换行且无横向溢出，浏览器控制台无错误或警告，未登录或修改真实账本数据。
 
 ### v1.6.0（2026-07-24）
 
