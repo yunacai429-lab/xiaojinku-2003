@@ -217,6 +217,9 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest asse
 - Logo 已用于登录页、应用顶栏、浏览器图标及 iPhone/Android 主屏幕图标；新增 Web App 清单和独立运行模式，页面标题更新为“小金库 2003 · 复古记账”。
 - 本地检查通过：JavaScript 语法和 Git 空白检查无错误；1280x900 登录页与账本页面正常；390x844 页面无横向溢出，底部 6 个导航入口完整；浏览器控制台无错误。
 - 版本号升级为 `v1.7.0`，资源缓存参数升级为 `1.7.0-20260728a`；README 与 GitHub Release 文案已由用户确认。
+- 应用发布提交为 `866327e427c0c732ea1e201be8a5792921af889f`，已推送至 GitHub `main`；GitHub Release `v1.7.0` 已创建并设为 Latest，地址为 `https://github.com/yunacai429-lab/xiaojinku-2003/releases/tag/v1.7.0`。
+- Cloudflare Pages Production 部署 ID：`adebca69-58c7-4160-99d9-fd649ffb54b6`，控制台显示部署成功。
+- 生产主域验收通过：HTML 加载 `1.7.0-20260728a` 资源，Manifest 为 `standalone` 并包含 192px/512px 图标；线上 180px `apple-touch-icon` 与本地文件 SHA-256 一致。
 
 ### v1.6.1：手机记账页类别按钮自适应（2026-07-28）
 
