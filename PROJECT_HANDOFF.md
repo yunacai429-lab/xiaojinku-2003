@@ -217,7 +217,9 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest asse
 - 个人资料、类别预算、账户、导入继续进入已有二级页；记账周期、还款提醒、界面与显示新增独立二级页，统一提供返回设置页的返回键；导出继续使用原有导出对话框。
 - 本地检查通过：JavaScript 语法、Git 空白与冲突标记均无错误；390x844 手机设置页共 8 个入口、无横向溢出，保存记账周期后列表摘要正确更新；记账周期、还款提醒、界面与显示的返回导航正常；复古2切换正常；1280x900 桌面无横向溢出；浏览器控制台无错误或警告。
 - 版本号升级为 `v1.7.1`，资源缓存参数升级为 `1.7.1-20260729a`；README 与 GitHub Release 文案已经用户确认。
-- 应用提交、GitHub Release、Cloudflare Production 部署与生产验收结果将在发布后补记。
+- 应用发布提交为 `271fe79cb66abb2c1c093681b56c006b4c99abdc`，已推送至 GitHub `main`；GitHub Release `v1.7.1` 已创建并设为 Latest，地址为 `https://github.com/yunacai429-lab/xiaojinku-2003/releases/tag/v1.7.1`。
+- Cloudflare Pages Production 部署 ID：`a0d444ff-29aa-46ad-ae3a-a11f3e3952c1`，详情状态为 `success`，共上传 11 个文件；唯一部署网址为 `https://a0d444ff.xiaojinku-2003.pages.dev`。
+- 生产主域已核对加载 `style.css?v=1.7.1-20260729a` 和 `main.js?v=1.7.1-20260729a`；390x844 演示设置页显示 3 个分组和 8 个入口，记账周期二级页及返回键正常，无横向溢出，浏览器控制台无错误或警告，未登录或修改真实账号数据。
 
 ### v1.7.0：小金库品牌 Logo与手机主屏幕支持（2026-07-28）
 
