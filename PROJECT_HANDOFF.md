@@ -217,6 +217,9 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest asse
 - 支持鼠标、触屏以及空格/回车键按住操作；触屏取消、权限失败、识别失败或没有识别到内容时不会发送。
 - 本地检查通过：JavaScript 语法、Git 空白和冲突标记均无错误；390x844 演示模式下输入框、语音和发送三列无横向溢出，原“记一笔”表单仍可进入，控制台无错误或警告；未触发真实麦克风权限申请。
 - 用户已确认 README 与 GitHub Release 文案；版本号升级为 `v1.8.1`，资源缓存参数升级为 `1.8.1-20260730a`。
+- 应用发布提交为 `8abcfaa268ffb97a3e67fd4b2b4afbbf151190fa`，已推送至 GitHub `main`；GitHub Release `v1.8.1` 已创建并设为 Latest，地址为 `https://github.com/yunacai429-lab/xiaojinku-2003/releases/tag/v1.8.1`。
+- Cloudflare Pages Production 部署 ID：`7dac1b14-0ead-4898-b936-1584ada848d6`，详情状态为 `success`，共上传 11 个文件；唯一部署网址为 `https://7dac1b14.xiaojinku-2003.pages.dev`。
+- 生产主域已核对加载 `style.css?v=1.8.1-20260730a` 和 `main.js?v=1.8.1-20260730a`；线上演示模式显示“按住语音输入”和“按住说话，松开发送”，页面无横向溢出，控制台无错误或警告，未触发麦克风权限或修改真实账本数据。
 
 ### v1.8.0：对话记账页面（2026-07-30）
 
