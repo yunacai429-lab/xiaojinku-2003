@@ -222,7 +222,9 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest asse
 - 识别结果先显示可编辑确认卡片，用户确认后才写入现有账本并沿用余额扣减、月付待还款和云同步逻辑。
 - 本地检查通过：JavaScript 语法和 Git 空白检查无错误；1280px 桌面演示模式成功解析并保存“昨天打车 28 元，支付宝支付”；390x844 手机底部保留原“记账”并新增“对话”，共 7 个入口且无横向溢出；确认卡片可滚动、输入栏可见，“7月20日午饭 32 元，微信支付”可正确区分日期与金额；原记账表单的金额、类别和支付方式均正常，浏览器控制台无错误。
 - 用户已确认 README 与 GitHub Release 文案；版本号升级为 `v1.8.0`，资源缓存参数升级为 `1.8.0-20260730a`。
-- 提交、推送、GitHub Release 与 Cloudflare Production 部署结果待本次发布完成后补充。
+- 应用发布提交为 `fdfc46b4aeb992529372fb1377f5062a8203f34a`，已推送至 GitHub `main`；GitHub Release `v1.8.0` 已创建并设为 Latest，地址为 `https://github.com/yunacai429-lab/xiaojinku-2003/releases/tag/v1.8.0`。
+- Cloudflare Pages Production 部署 ID：`c9add2ee-a2f3-4a90-86b1-13477517de91`，详情状态为 `success`，共上传 11 个文件；唯一部署网址为 `https://c9add2ee.xiaojinku-2003.pages.dev`。
+- 生产主域已核对加载 `style.css?v=1.8.0-20260730a` 和 `main.js?v=1.8.0-20260730a`；线上演示模式成功将“午饭32微信”识别为 ¥32、吃饭、微信，语音按钮与助手 Logo 正常，页面无横向溢出，浏览器控制台无错误或警告，未登录或修改真实账号数据。
 
 ### v1.7.1：设置页分组列表与二级页面（2026-07-29）
 
