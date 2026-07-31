@@ -1,0 +1,10 @@
+body[data-page="chat"] .chat-window{position:relative}
+.chat-voice-overlay{position:absolute;z-index:5;inset:0;display:grid;place-items:center;padding:20px;background:#16283c55;opacity:0;pointer-events:none;transition:opacity .12s ease}
+.chat-voice-overlay.visible{opacity:1}
+.chat-voice-card{display:grid;justify-items:center;gap:9px;min-width:156px;padding:18px 20px;border:2px solid #65788f;border-radius:8px;background:#34495eeb;color:#fff;box-shadow:2px 3px 0 #1f304455;text-align:center}
+.chat-voice-icon{display:grid;place-items:center;width:48px;height:48px;border:1px solid #8ba0b6;border-radius:50%;background:#4b657e;font-size:24px}
+.chat-voice-wave{display:flex;align-items:center;justify-content:center;gap:3px;height:22px}
+.chat-voice-wave i{display:block;width:3px;height:8px;background:#d9ebff;animation:chat-voice-pulse .7s ease-in-out infinite alternate}
+.chat-voice-wave i:nth-child(2),.chat-voice-wave i:nth-child(6){height:14px;animation-delay:.12s}.chat-voice-wave i:nth-child(3),.chat-voice-wave i:nth-child(5){height:19px;animation-delay:.24s}.chat-voice-wave i:nth-child(4){height:11px;animation-delay:.36s}
+.chat-voice-overlay.cancel .chat-voice-card{border-color:#d45b51;background:#713b42}.chat-voice-overlay.cancel .chat-voice-icon{background:#a94d52}.chat-voice-overlay.cancel .chat-voice-wave{opacity:.45}
+@keyframes chat-voice-pulse{to{transform:scaleY(.45);opacity:.55}}
