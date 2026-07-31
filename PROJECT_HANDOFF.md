@@ -216,6 +216,9 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest asse
 - 对话页按住语音按钮时新增微信式录音浮层，显示录音状态和动态波形。
 - 按压位置上移约 70px 进入“松开取消”状态；正常松开仍发送识别文字到确认流程。
 - 用户已确认 README 与 GitHub Release 文案；版本号升级为 `v1.8.2`，资源缓存参数升级为 `1.8.2-20260731a`。
+- 本地检查通过：JavaScript 语法、Git 空白和冲突标记均无错误；部署包包含 15 个文件及新增 `src/chat-voice.css`。
+- 应用发布提交为 `7f5281f2e443a7178a01c637a1e468869f4281a4`，已推送至 GitHub `main`；GitHub Release `v1.8.2` 已创建并设为 Latest，地址为 `https://github.com/yunacai429-lab/xiaojinku-2003/releases/tag/v1.8.2`。
+- Cloudflare Pages Production 部署 ID：`7498e93e-0aca-435d-b506-9b013f683e58`，详情状态为 `success`；生产主域已核对加载 `style.css?v=1.8.2-20260731a`、`chat-voice.css?v=1.8.2-20260731a` 和 `main.js?v=1.8.2-20260731a`。
 
 ### v1.8.1：语音按住说话（2026-07-30）
 
