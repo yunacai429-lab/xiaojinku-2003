@@ -218,7 +218,10 @@ zip -r -FS outputs/xiaojinku-cloudflare.zip index.html manifest.webmanifest asse
 - 用户已确认 README 与 GitHub Release 文案；版本号升级为 `v1.8.3`，资源缓存参数升级为 `1.8.3-20260817a`。
 - 本地检查通过：JavaScript 语法、Git 空白和冲突标记均无错误；本地 HTTP 首页已核对不再包含 `xlsx.full.min.js` 脚本标签。
 - 首页首包减少约 336KB gzip / 952KB 未压缩的 Excel 解析库，同时减少移动端首次打开时的脚本解析成本。
-- 发布状态：本轮 GitHub 推送、Release 和 Cloudflare Production 部署完成后继续补充实际 SHA、部署 ID 和线上核验结果。
+- 本地应用发布提交和 GitHub `main` 实际提交均为 `fb07eddc4ff27df6dcbc56ff63ebe48e38e53454`；GitHub Release `v1.8.3` 已创建并设为 Latest，地址为 `https://github.com/yunacai429-lab/xiaojinku-2003/releases/tag/v1.8.3`。
+- Cloudflare Pages Production 通过 Wrangler 部署完成，唯一部署网址为 `https://d68c3bbf.xiaojinku-2003.pages.dev`。
+- 生产主域 `https://xiaojinku-2003.pages.dev/` 已核对加载 `style.css?v=1.8.3-20260817a`、`chat-voice.css?v=1.8.3-20260817a` 和 `main.js?v=1.8.3-20260817a`；首页 HTML 未包含 `vendor/xlsx.full.min.js` 脚本标签。
+- 本轮使用 Wrangler OAuth 登录发布；本机用户级 GitHub 凭据助手仍存在指向 `/tmp/gh-cli-2.96.0/...` 的失效配置，Git 推送使用一次性 `credential.helper=osxkeychain` 覆盖完成。
 
 ### v1.8.2：微信式语音按压反馈（2026-07-31）
 
